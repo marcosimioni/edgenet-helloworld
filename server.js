@@ -5,7 +5,7 @@ const handleRequest = function(request, response) {
   const parsedRequest = url.parse(request.url, true);
   
   response.writeHead(200);
-  response.end("Hello, World, from " + parsedRequest.query.hostname +"!\n");
+  response.end("Hello, World, from " + process.env.MY_NODE_NAME +"!\n");
 }
 var www = http.createServer(handleRequest);
 www.listen(port);
